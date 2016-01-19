@@ -2,5 +2,5 @@
 
 A podcast parser for python
 
-[![Documentation Status](https://readthedocs.org/projects/pypodcastparser/badge/?version=latest)](http://pypodcastparser.read
+[![Build Status](https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master)](https://travis-ci.org/jrigden/pyPodcastParser) [![Documentation Status](https://readthedocs.org/projects/pypodcastparser/badge/?version=latest)](http://pypodcastparser.read
 thedocs.org/en/latest/?badge=latest) http://pypodcastparser.readthedocs.org/en/latest/
