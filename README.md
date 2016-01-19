@@ -9,9 +9,9 @@ Version 0.1.0
 ## Documentation
 
 [![Documentation Status](https://readthedocs.org/projects/pypodcastparser/badge/?version=latest)](http://pypodcastparser.read
-thedocs.org/en/latest/?badge=latest) http://pypodcastparser.readthedocs.org/e
+thedocs.org/en/latest/?badge=latest)
 
-Read the Docs[](http://pypodcastparser.readthedocs.org/en/latest/)
+[Read the Docs](http://pypodcastparser.readthedocs.org/en/latest/)
 
 ## Testing
 [![Build Status](https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master)](https://travis-ci.org/jrigden/pyPodcastParser) 
