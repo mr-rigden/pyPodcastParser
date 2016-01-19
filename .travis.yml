@@ -7,5 +7,6 @@ install:
 script:
   - py.test -v test_test.py
   - coverage run __init__.py
+  - coverage combine
 after_success:
   - coveralls
