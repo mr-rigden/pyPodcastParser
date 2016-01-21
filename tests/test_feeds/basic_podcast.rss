@@ -1,0 +1,53 @@
+<rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
+  <channel>
+    <title>basic title</title>
+    <link>https://github.com/jrigden/pyPodcastParser</link>
+    <description>basic description</description>
+    <itunes:author>basic itunes author</itunes:author>
+    <copyright>basic copyright</copyright>
+    <generator>an infinite monkeys</generator>
+
+
+    <language>basic  language</language>
+    <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
+    <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
+    <itunes:category text="News"/>
+    <itunes:category text="Health"/>
+    <itunes:explicit>No</itunes:explicit>
+    <itunes:image href="https://github.com/jrigden/pyPodcastParser.jpg"/>
+
+    <itunes:subtitle>basic itunes subtitle</itunes:subtitle>
+    <itunes:summary>basic itunes summary</itunes:summary>
+    <itunes:owner>
+      <itunes:name>basic itunes owner name</itunes:name>
+      <itunes:email>basic itunes owner email</itunes:email>
+    </itunes:owner>
+
+    <item>
+      <itunes:author>basic item itunes author</itunes:author>
+      <itunes:keywords/>
+      <itunes:duration>1:05</itunes:duration>
+      <title>basic item title</title>
+      <guid isPermaLink="true">basic item guid</guid>
+      <description>basic item description</description>
+
+      <category>News</category>
+      <pubDate>Fri, 21 Mar 2008 09:51:00 EDT</pubDate>
+      <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
+    </item>
+
+    <item>
+      <itunes:author>another basic item itunes author</itunes:author>
+      <itunes:keywords/>
+      <itunes:duration>1:05</itunes:duration>
+      <title>another basic item title</title>
+      <guid isPermaLink="true">another basic item guid</guid>
+      <description>another basic item description</description>
+
+      <category>News</category>
+      <pubDate>Fri, 21 Mar 2008 09:51:00 EDT</pubDate>
+      <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
+  </item>
+
+  </channel>
+</rss>
