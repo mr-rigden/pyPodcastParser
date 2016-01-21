@@ -5,9 +5,16 @@
     <description>basic description</description>
     <itunes:author>basic itunes author</itunes:author>
     <copyright>basic copyright</copyright>
+
+    <managingEditor>nobody</managingEditor>
+    <webMaster>webrobot</webMaster>
+
     <generator>an infinite monkeys</generator>
 
+    <category domain="http://www.example.com/1">Example 1</category>
+    <category>Example category 2</category>
 
+    <itunes:keywords>Python, Testing</itunes:keywords>
     <language>basic  language</language>
     <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
     <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
