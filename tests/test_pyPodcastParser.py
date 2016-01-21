@@ -5,7 +5,9 @@ import pyPodcastParser
 #py.test test_pyPodcastParser.py
 
 
-
+class Test_Test_Fail(unittest.TestCase):
+    def test_loading_sample_data(self):
+        self.assertEqual(True, False)
 
 class Test_Test(unittest.TestCase):
     def test_loading_sample_data(self):

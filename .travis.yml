@@ -6,7 +6,6 @@ install:
 # command to run tests
 script:
   - py.test -v tests/test_test.py
-  - py.test -v tests/test_pyPodcastParser.py
   - coverage run __init__.py
   - coverage combine
 after_success:
