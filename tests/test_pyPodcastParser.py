@@ -4,6 +4,12 @@ import unittest
 import pyPodcastParser
 #py.test test_pyPodcastParser.py
 
+#######
+# coverage run --source pyPodcastParser -m py.test
+#######
+# py.test --cov=pyPodcastParser tests/
+#######
+# py.test -v   --capture=sys tests/test_pyPodcastParser.py
 
 
 class Test_Test(unittest.TestCase):
@@ -18,6 +24,7 @@ class Test_Basic_Feed(unittest.TestCase):
         basic_podcast_file = open(basic_podcast_path, "r")
         self.basic_podcast = basic_podcast_file.read()
         self.podcast = pyPodcastParser.Podcast(self.basic_podcast)
+
 
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
@@ -44,8 +51,6 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_itunes_categories(self):
         self.assertTrue("News" in self.podcast.itunes_categories)
         self.assertTrue("Health" in self.podcast.itunes_categories)
-
-
 
     def test_itune_image(self):
         self.assertEqual(self.podcast.itune_image, "https://github.com/jrigden/pyPodcastParser.jpg")
@@ -94,7 +99,17 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, "webrobot")
 
+class Test_Itunes_Block_Feed(unittest.TestCase):
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'itunes_block_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = pyPodcastParser.Podcast(self.basic_podcast)
 
+    def test_itunes_block(self):
+        self.assertEqual(self.podcast.itunes_block, True)
 
 if __name__ == '__main__':
     unittest.main()

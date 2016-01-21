@@ -75,7 +75,10 @@ class Podcast():
         self.itunes_author_name = self.soup.find('itunes:author').string
 
     def set_itunes_block(self):
-        block = self.soup.find('itunes:block')
+        try:
+            block = self.soup.find('itunes:block').string.lower()
+        except AttributeError:
+            block = ""
         if block == "yes":
             self.itunes_block = True
         else:
