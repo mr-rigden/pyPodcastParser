@@ -11,7 +11,6 @@ docutils==0.12
 flake8==2.5.1
 Jinja2==2.8
 livereload==2.4.1
-lxml==3.5.0
 MarkupSafe==0.23
 mccabe==0.3.1
 pathtools==0.1.2
