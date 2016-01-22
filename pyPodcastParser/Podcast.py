@@ -19,6 +19,7 @@ class Podcast():
         self.set_required_elements()
 
     def set_extended_elements(self):
+        """Return the pathname of the KOS root directory."""
         self.set_creative_commons()
         self.set_owner()
         self.set_subtitle()
