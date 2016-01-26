@@ -3,6 +3,7 @@ import os
 import unittest
 
 from pyPodcastParser import Podcast
+
 # py.test test_pyPodcastParser.py
 
 #######
@@ -17,6 +18,70 @@ class Test_Test(unittest.TestCase):
 
     def test_loading_sample_data(self):
         self.assertEqual(True, True)
+
+class Test_Basic_Feed_Items(unittest.TestCase):
+
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'basic_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = Podcast.Podcast(self.basic_podcast)
+
+    def test_item_count(self):
+        number_of_items = len(self.podcast.items)
+        self.assertEqual(number_of_items, 2)
+
+    def test_item_comments(self):
+        self.assertEqual(self.podcast.items[0].comments, "http://comments.com/entry/0")
+        self.assertEqual(self.podcast.items[1].comments, "http://comments.com/entry/1")
+
+    def test_item_categories(self):
+        self.assertTrue("Grateful Dead" in self.podcast.items[0].categories)
+        self.assertTrue("Dead and Grateful" in self.podcast.items[1].categories)
+
+    def test_item_multi_categories(self):
+        self.assertTrue("Grateful Dead" in self.podcast.items[0].categories)
+        self.assertTrue("Stones" in self.podcast.items[0].categories)
+
+    def test_item_categories_fail(self):
+        self.assertFalse("x" in self.podcast.items[0].categories)
+        self.assertFalse("x" in self.podcast.items[1].categories)
+
+
+    def test_item_description(self):
+        self.assertEqual(self.podcast.items[0].description, "basic item description")
+        self.assertEqual(self.podcast.items[1].description, "another basic item description")
+
+    def test_item_author(self):
+        self.assertEqual(self.podcast.items[0].author, "lawyer@boyer.net")
+        self.assertEqual(self.podcast.items[1].author, "lawyer@boyer.net (Lawyer Boyer)")
+
+    def test_item_enclosure_url(self):
+        self.assertEqual(self.podcast.items[0].enclosure_url, 'https://github.com/jrigden/pyPodcastParser.mp3')
+
+    def test_item_enclosure_type(self):
+        self.assertEqual(self.podcast.items[0].enclosure_type, 'audio/mpeg')
+
+    def test_item_enclosure_length(self):
+        self.assertEqual(self.podcast.items[0].enclosure_length, 123456)
+
+    def test_item_guid(self):
+        self.assertEqual(self.podcast.items[0].guid, 'basic item guid')
+        self.assertEqual(self.podcast.items[1].guid, 'another basic item guid')
+
+    def test_item_link(self):
+        self.assertEqual(self.podcast.items[0].link, "http://google.com/0")
+        self.assertEqual(self.podcast.items[1].link, "http://google.com/1")
+
+    def test_item_published_date(self):
+        self.assertEqual(self.podcast.items[0].published_date, "Fri, 21 Mar 2008 09:51:00 EDT")
+        self.assertEqual(self.podcast.items[1].published_date, "Fri, 21 Mar 2008 09:50:00 EDT")
+
+    def test_item_title(self):
+        self.assertEqual(self.podcast.items[0].title, "basic item title")
+        self.assertEqual(self.podcast.items[1].title, "another basic item title")
 
 
 class Test_Basic_Feed(unittest.TestCase):

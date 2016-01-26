@@ -31,6 +31,14 @@
     </itunes:owner>
 
     <item>
+      <link>http://google.com/0</link>
+      <author>lawyer@boyer.net</author>
+      <category>Grateful Dead</category>
+      <category>Stones</category>
+      <comments>http://comments.com/entry/0</comments>
+
+
+
       <itunes:author>basic item itunes author</itunes:author>
       <itunes:keywords/>
       <itunes:duration>1:05</itunes:duration>
@@ -44,6 +52,12 @@
     </item>
 
     <item>
+      <link>http://google.com/1</link>
+      <author>lawyer@boyer.net (Lawyer Boyer)</author>
+      <category>Dead and Grateful</category>
+      <comments>http://comments.com/entry/1</comments>
+
+
       <itunes:author>another basic item itunes author</itunes:author>
       <itunes:keywords/>
       <itunes:duration>1:05</itunes:duration>
@@ -52,7 +66,7 @@
       <description>another basic item description</description>
 
       <category>News</category>
-      <pubDate>Fri, 21 Mar 2008 09:51:00 EDT</pubDate>
+      <pubDate>Fri, 21 Mar 2008 09:50:00 EDT</pubDate>
       <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
   </item>
 

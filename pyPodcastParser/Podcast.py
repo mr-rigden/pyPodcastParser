@@ -4,6 +4,7 @@ from bs4 import BeautifulSoup
 import pytz
 import datetime
 
+from pyPodcastParser.Item import Item
 
 class Podcast():
     """Parses an xml rss feed
@@ -40,6 +41,7 @@ class Podcast():
     """
 
     def __init__(self, feed_content):
+        super(Podcast, self).__init__()
         self.feed_content = feed_content
         self.set_soup()
         self.set_full_soup()
@@ -50,6 +52,7 @@ class Podcast():
         self.set_required_elements()
 
     def set_extended_elements(self):
+
         """Parses and sets non required elements"""
         self.set_creative_commons()
         self.set_owner()
@@ -63,6 +66,7 @@ class Podcast():
         self.set_itune_image()
         self.set_itunes_keywords()
         self.set_itunes_categories()
+        self.set_items()
 
     def set_optional_elements(self):
         """Sets elements considered option by RSS spec"""
@@ -89,6 +93,15 @@ class Podcast():
     def set_full_soup(self):
         """Sets soup and keeps items"""
         self.full_soup = BeautifulSoup(self.feed_content, "html.parser")
+
+    def set_items(self):
+        self.items = []
+        full_soup_items = self.full_soup.findAll('item')
+        for full_soup_item in full_soup_items:
+            item = Item(full_soup_item)
+            print(item)
+            if item:
+                self.items.append(item)
 
     def count_items(self):
         """Counts Items in full_soup and soup. For debugging"""
