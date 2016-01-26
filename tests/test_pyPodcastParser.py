@@ -2,7 +2,7 @@
 import os
 import unittest
 
-import pyPodcastParser
+from pyPodcastParser import Podcast
 # py.test test_pyPodcastParser.py
 
 #######
@@ -27,7 +27,7 @@ class Test_Basic_Feed(unittest.TestCase):
         basic_podcast_path = os.path.join(test_feeds_dir, 'basic_podcast.rss')
         basic_podcast_file = open(basic_podcast_path, "r")
         self.basic_podcast = basic_podcast_file.read()
-        self.podcast = pyPodcastParser.Podcast(self.basic_podcast)
+        self.podcast = Podcast.Podcast(self.basic_podcast)
 
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
@@ -116,7 +116,7 @@ class Test_Itunes_Block_Feed(unittest.TestCase):
             test_feeds_dir, 'itunes_block_podcast.rss')
         basic_podcast_file = open(basic_podcast_path, "r")
         self.basic_podcast = basic_podcast_file.read()
-        self.podcast = pyPodcastParser.Podcast(self.basic_podcast)
+        self.podcast = Podcast.Podcast(self.basic_podcast)
 
     def test_itunes_block(self):
         self.assertEqual(self.podcast.itunes_block, True)
