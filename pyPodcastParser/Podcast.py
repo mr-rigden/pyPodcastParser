@@ -9,6 +9,9 @@ from pyPodcastParser.Item import Item
 class Podcast():
     """Parses an xml rss feed
 
+    RSS Specs http://cyber.law.harvard.edu/rss/rss.html
+    iTunes Podcast Specs http://www.apple.com/itunes/podcasts/specs.html
+
     Args:
         feed_content (str): An rss string
 
@@ -26,8 +29,11 @@ class Podcast():
         itunes_author_name (str): The podcast's author name for iTunes
         itunes_block (bool): Does the podcast block itunes
         itunes_categories (list): List of strings of itunes categories
+        itunes_complete (str): Is this podcast done and complete
+        itunes_explicit (str): Is this item explicit. Should only be "yes" and "clean."
         itune_image (str): URL to itunes image
         itunes_keywords (list): List of strings of itunes keywords
+        itunes_new_feed_url (str): The new url of this podcast
         language (str): Language of feed
         last_build_date (str): Last build date of this feed
         link (str): URL to homepage
@@ -63,8 +69,11 @@ class Podcast():
         """Sets elements related to itunes"""
         self.set_itunes_author_name()
         self.set_itunes_block()
+        self.set_itunes_complete()
+        self.set_itunes_explicit()
         self.set_itune_image()
         self.set_itunes_keywords()
+        self.set_itunes_new_feed_url()
         self.set_itunes_categories()
         self.set_items()
 
@@ -148,6 +157,19 @@ class Podcast():
             category_text = category.get('text')
             self.itunes_categories.append(category_text)
 
+    def set_itunes_complete(self):
+        """Parses complete from itunes tags and sets value"""
+        try:
+            self.itunes_complete = self.soup.find('itunes:complete').string
+            self.itunes_complete = self.itunes_complete.lower()
+        except AttributeError:
+            self.itunes_complete = None
+
+    def set_itunes_explicit(self):
+        """Parses explicit from itunes tags and sets value"""
+        self.itunes_explicit = self.soup.find('itunes:explicit').string
+        self.itunes_explicit = self.itunes_explicit.lower()
+
     def set_itune_image(self):
         """Parses itunes images and set url as value"""
         self.itune_image = self.soup.find('itunes:image').get('href')
@@ -158,6 +180,13 @@ class Podcast():
         self.itunes_keywords = [keyword.strip()
                                 for keyword in keywords.split(',')]
         self.itunes_keywords = list(set(self.itunes_keywords))
+
+    def set_itunes_new_feed_url(self):
+        """Parses new feed url from itunes tags and sets value"""
+        try:
+            self.itunes_new_feed_url = self.soup.find('itunes:new-feed-url').string
+        except AttributeError:
+            self.itunes_new_feed_url = None
 
     def set_language(self):
         """Parses feed language and set value"""

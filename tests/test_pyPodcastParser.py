@@ -19,6 +19,23 @@ class Test_Test(unittest.TestCase):
     def test_loading_sample_data(self):
         self.assertEqual(True, True)
 
+class Test_Basic_Feed_Item_Blocked(unittest.TestCase):
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'itunes_block_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = Podcast.Podcast(self.basic_podcast)
+
+    def test_item_itunes_block(self):
+        self.assertEqual(self.podcast.itunes_block, True)
+
+    def test_item_itunes_explicit(self):
+        self.assertEqual(self.podcast.items[0].itunes_explicit, "yes")
+        self.assertEqual(self.podcast.items[1].itunes_explicit, "highly offensive")
+
+
 class Test_Basic_Feed_Items(unittest.TestCase):
 
     def setUp(self):
@@ -28,6 +45,8 @@ class Test_Basic_Feed_Items(unittest.TestCase):
         basic_podcast_file = open(basic_podcast_path, "r")
         self.basic_podcast = basic_podcast_file.read()
         self.podcast = Podcast.Podcast(self.basic_podcast)
+
+
 
     def test_item_count(self):
         number_of_items = len(self.podcast.items)
@@ -57,6 +76,41 @@ class Test_Basic_Feed_Items(unittest.TestCase):
     def test_item_author(self):
         self.assertEqual(self.podcast.items[0].author, "lawyer@boyer.net")
         self.assertEqual(self.podcast.items[1].author, "lawyer@boyer.net (Lawyer Boyer)")
+
+    def test_item_itunes_author(self):
+        self.assertEqual(self.podcast.items[0].itunes_author_name, "basic item itunes author")
+        self.assertEqual(self.podcast.items[1].itunes_author_name, "another basic item itunes author")
+
+    def test_item_itunes_block(self):
+        self.assertEqual(self.podcast.itunes_block, False)
+
+    def test_item_itunes_duration(self):
+        self.assertEqual(self.podcast.items[0].itunes_duration, "1:05")
+        self.assertEqual(self.podcast.items[1].itunes_duration, "1:11:05")
+
+    def test_item_itunes_closed_captioned(self):
+        self.assertEqual(self.podcast.items[0].itunes_closed_captioned, "yes")
+        self.assertEqual(self.podcast.items[1].itunes_closed_captioned, None)
+
+    def test_item_itunes_explicit(self):
+        self.assertEqual(self.podcast.items[0].itunes_explicit, "no")
+        self.assertEqual(self.podcast.items[1].itunes_explicit, "clean")
+
+    def test_item_itunes_image(self):
+        self.assertEqual(self.podcast.items[0].itune_image, "http://poo.poo/gif.jpg")
+        self.assertEqual(self.podcast.items[1].itune_image, "http://poo.poo/gif.jpg")
+
+    def test_item_itunes_order(self):
+        self.assertEqual(self.podcast.items[0].itunes_order, "2")
+        self.assertEqual(self.podcast.items[1].itunes_order, "1")
+
+    def test_item_itunes_subtitle(self):
+        self.assertEqual(self.podcast.items[0].itunes_subtitle, "The Subtitle")
+        self.assertEqual(self.podcast.items[1].itunes_subtitle, "Another Subtitle")
+
+    def test_item_itunes_summary(self):
+        self.assertEqual(self.podcast.items[0].itunes_summary, "The Summary")
+        self.assertEqual(self.podcast.items[1].itunes_summary, "Another Summary")
 
     def test_item_enclosure_url(self):
         self.assertEqual(self.podcast.items[0].enclosure_url, 'https://github.com/jrigden/pyPodcastParser.mp3')
@@ -120,6 +174,12 @@ class Test_Basic_Feed(unittest.TestCase):
         self.assertTrue("News" in self.podcast.itunes_categories)
         self.assertTrue("Health" in self.podcast.itunes_categories)
 
+    def test_itunes_explicit(self):
+        self.assertEqual(self.podcast.itunes_explicit, "clean")
+
+    def test_itunes_complete(self):
+        self.assertEqual(self.podcast.itunes_complete, "yes")
+
     def test_itune_image(self):
         self.assertEqual(self.podcast.itune_image,
                          "https://github.com/jrigden/pyPodcastParser.jpg")
@@ -131,6 +191,9 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_itunes_keyword_length(self):
         number_of_keywords = len(self.podcast.itunes_keywords)
         self.assertEqual(number_of_keywords, 2)
+
+    def test_itunes_new_feed_url(self):
+        self.assertEqual(self.podcast.itunes_new_feed_url, "http://newlocation.com/example.rss")
 
     def test_language(self):
         self.assertEqual(self.podcast.language, "basic  language")
@@ -185,6 +248,9 @@ class Test_Itunes_Block_Feed(unittest.TestCase):
 
     def test_itunes_block(self):
         self.assertEqual(self.podcast.itunes_block, True)
+
+    def test_itunes_explicit(self):
+        self.assertEqual(self.podcast.itunes_explicit, "yes")
 
 if __name__ == '__main__':
     unittest.main()

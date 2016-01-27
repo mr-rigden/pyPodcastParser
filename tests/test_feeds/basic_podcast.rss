@@ -1,74 +1,84 @@
 <rss xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" version="2.0">
-  <channel>
-    <title>basic title</title>
-    <link>https://github.com/jrigden/pyPodcastParser</link>
-    <description>basic description</description>
-    <itunes:author>basic itunes author</itunes:author>
-    <copyright>basic copyright</copyright>
+    <channel>
 
-    <managingEditor>nobody</managingEditor>
-    <webMaster>webrobot</webMaster>
+        <category domain="http://www.example.com/1">Example 1</category>
+        <category>Example category 2</category>
+        <copyright>basic copyright</copyright>
+        <description>basic description</description>
+        <generator>an infinite monkeys</generator>
+        <language>basic  language</language>
+        <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
+        <link>https://github.com/jrigden/pyPodcastParser</link>
+        <managingEditor>nobody</managingEditor>
+        <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
+        <title>basic title</title>
+        <webMaster>webrobot</webMaster>
 
-    <generator>an infinite monkeys</generator>
+        <itunes:author>basic itunes author</itunes:author>
+        <itunes:category text="Health"/>
+        <itunes:category text="News"/>
+        <itunes:complete>yes</itunes:complete>
+        <itunes:explicit>clean</itunes:explicit>
+        <itunes:image href="https://github.com/jrigden/pyPodcastParser.jpg"/>
+        <itunes:keywords>Python, Testing</itunes:keywords>
+        <itunes:new-feed-url>http://newlocation.com/example.rss</itunes:new-feed-url>
+        <itunes:owner>
+            <itunes:email>basic itunes owner email</itunes:email>
+            <itunes:name>basic itunes owner name</itunes:name>
+        </itunes:owner>
+        <itunes:subtitle>basic itunes subtitle</itunes:subtitle>
+        <itunes:summary>basic itunes summary</itunes:summary>
 
-    <category domain="http://www.example.com/1">Example 1</category>
-    <category>Example category 2</category>
+        <item>
 
-    <itunes:keywords>Python, Testing</itunes:keywords>
-    <language>basic  language</language>
-    <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
-    <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
-    <itunes:category text="News"/>
-    <itunes:category text="Health"/>
-    <itunes:explicit>No</itunes:explicit>
-    <itunes:image href="https://github.com/jrigden/pyPodcastParser.jpg"/>
+            <author>lawyer@boyer.net</author>
+            <category>Grateful Dead</category>
+            <category>Stones</category>
+            <comments>http://comments.com/entry/0</comments>
+            <description>basic item description</description>
+            <guid isPermaLink="true">basic item guid</guid>
+            <link>http://google.com/0</link>
+            <pubDate>Fri, 21 Mar 2008 09:51:00 EDT</pubDate>
+            <title>basic item title</title>
 
-    <itunes:subtitle>basic itunes subtitle</itunes:subtitle>
-    <itunes:summary>basic itunes summary</itunes:summary>
-    <itunes:owner>
-      <itunes:name>basic itunes owner name</itunes:name>
-      <itunes:email>basic itunes owner email</itunes:email>
-    </itunes:owner>
+            <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
 
-    <item>
-      <link>http://google.com/0</link>
-      <author>lawyer@boyer.net</author>
-      <category>Grateful Dead</category>
-      <category>Stones</category>
-      <comments>http://comments.com/entry/0</comments>
-
-
-
-      <itunes:author>basic item itunes author</itunes:author>
-      <itunes:keywords/>
-      <itunes:duration>1:05</itunes:duration>
-      <title>basic item title</title>
-      <guid isPermaLink="true">basic item guid</guid>
-      <description>basic item description</description>
-
-      <category>News</category>
-      <pubDate>Fri, 21 Mar 2008 09:51:00 EDT</pubDate>
-      <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
-    </item>
-
-    <item>
-      <link>http://google.com/1</link>
-      <author>lawyer@boyer.net (Lawyer Boyer)</author>
-      <category>Dead and Grateful</category>
-      <comments>http://comments.com/entry/1</comments>
+            <itunes:author>basic item itunes author</itunes:author>
+            <itunes:isClosedCaptioned>yes</itunes:isClosedCaptioned>
+            <itunes:duration>1:05</itunes:duration>
+            <itunes:explicit>no</itunes:explicit>
+            <itunes:image href="http://poo.poo/gif.jpg"/>
+            <itunes:keywords/>
+            <itunes:order>2</itunes:order>
+            <itunes:subtitle>The Subtitle</itunes:subtitle>
+            <itunes:summary>The Summary</itunes:summary>
 
 
-      <itunes:author>another basic item itunes author</itunes:author>
-      <itunes:keywords/>
-      <itunes:duration>1:05</itunes:duration>
-      <title>another basic item title</title>
-      <guid isPermaLink="true">another basic item guid</guid>
-      <description>another basic item description</description>
+        </item>
 
-      <category>News</category>
-      <pubDate>Fri, 21 Mar 2008 09:50:00 EDT</pubDate>
-      <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
-  </item>
+        <item>
 
-  </channel>
+            <author>lawyer@boyer.net (Lawyer Boyer)</author>
+            <category>Dead and Grateful</category>
+            <category>News</category>
+            <comments>http://comments.com/entry/1</comments>
+            <description>another basic item description</description>
+            <guid isPermaLink="true">another basic item guid</guid>
+            <link>http://google.com/1</link>
+            <pubDate>Fri, 21 Mar 2008 09:50:00 EDT</pubDate>
+            <title>another basic item title</title>
+
+            <enclosure length="123456" url="https://github.com/jrigden/pyPodcastParser.mp3" type="audio/mpeg"/>
+
+            <itunes:author>another basic item itunes author</itunes:author>
+            <itunes:duration>1:11:05</itunes:duration>
+            <itunes:explicit>clean</itunes:explicit>
+            <itunes:image href="http://poo.poo/gif.jpg"/>
+            <itunes:keywords/>
+            <itunes:order>1</itunes:order>
+            <itunes:subtitle>Another Subtitle</itunes:subtitle>
+            <itunes:summary>Another Summary</itunes:summary>
+
+        </item>
+     </channel>
 </rss>
