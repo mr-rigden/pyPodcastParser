@@ -340,6 +340,9 @@ class Test_Missing_Info_Feed(unittest.TestCase):
     def test_copyright(self):
         self.assertEqual(self.podcast.copyright, None)
 
+    def test_creative_commons(self):
+        self.assertEqual(self.podcast.creative_commons, None)
+
     def test_description(self):
         self.assertEqual(self.podcast.description, None)
 
