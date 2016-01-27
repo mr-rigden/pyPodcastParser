@@ -53,7 +53,10 @@ class Item(object):
 
     def set_author(self):
         """Parses author and set value."""
-        self.author = self.soup.find('author').string
+        try:
+            self.author = self.soup.find('author').string
+        except AttributeError:
+            self.author = None
 
     def set_categories(self):
         """Parses and set categories"""
@@ -65,34 +68,63 @@ class Item(object):
 
     def set_comments(self):
         """Parses comments and set value."""
-        self.comments = self.soup.find('comments').string
+        try:
+            self.comments = self.soup.find('comments').string
+        except AttributeError:
+            self.comments = None
 
     def set_description(self):
         """Parses description and set value."""
-        self.description = self.soup.find('description').string
+        try:
+            self.description = self.soup.find('description').string
+        except AttributeError:
+            self.comments = None
 
     def set_enclosure(self):
         """Parses enclosure_url, enclosure_type then set values."""
-        self.enclosure_url = self.soup.find('enclosure')['url']
-        self.enclosure_type = self.soup.find('enclosure')['type']
-        self.enclosure_length = self.soup.find('enclosure')['length']
-        self.enclosure_length = int(self.enclosure_length)
+        try:
+            self.enclosure_url = self.soup.find('enclosure')['url']
+        except:
+            self.enclosure_url = None
+        try:
+            self.enclosure_type = self.soup.find('enclosure')['type']
+        except:
+            self.enclosure_type = None
+        try:
+            self.enclosure_length = self.soup.find('enclosure')['length']
+            self.enclosure_length = int(self.enclosure_length)
+        except:
+            self.enclosure_length = None
 
     def set_guid(self):
         """Parses guid and set value"""
-        self.guid = self.soup.find('guid').string
+        try:
+            self.guid = self.soup.find('guid').string
+        except AttributeError:
+            self.guid = None
 
     def set_link(self):
         """Parses link and set value."""
-        self.link = self.soup.find('link').string
+        try:
+            self.link = self.soup.find('link').string
+        except AttributeError:
+            self.link = None
+
 
     def set_published_date(self):
         """Parses published date and set value."""
-        self.published_date = self.soup.find('pubdate').string
+        try:
+            self.published_date = self.soup.find('pubdate').string
+        except AttributeError:
+            self.published_date = None
+
 
     def set_title(self):
         """Parses title and set value."""
-        self.title = self.soup.find('title').string
+        try:
+            self.title = self.soup.find('title').string
+        except AttributeError:
+            self.title = None
 
 
     def set_itunes_element(self):
@@ -109,7 +141,10 @@ class Item(object):
 
     def set_itunes_author_name(self):
         """Parses author name from itunes tags and sets value"""
-        self.itunes_author_name = self.soup.find('itunes:author').string
+        try:
+            self.itunes_author_name = self.soup.find('itunes:author').string
+        except AttributeError:
+            self.itunes_author_name = None
 
     def set_itunes_block(self):
         """Check and see if item is blocked from iTunes and sets value"""
@@ -132,16 +167,25 @@ class Item(object):
 
     def set_itunes_duration(self):
         """Parses duration from itunes tags and sets value"""
-        self.itunes_duration = self.soup.find('itunes:duration').string
+        try:
+            self.itunes_duration = self.soup.find('itunes:duration').string
+        except AttributeError:
+            self.itunes_duration = None
 
     def set_itunes_explicit(self):
         """Parses explicit from itunes item tags and sets value"""
-        self.itunes_explicit = self.soup.find('itunes:explicit').string
-        self.itunes_explicit = self.itunes_explicit.lower()
+        try:
+            self.itunes_explicit = self.soup.find('itunes:explicit').string
+            self.itunes_explicit = self.itunes_explicit.lower()
+        except AttributeError:
+            self.itunes_explicit = None
 
     def set_itune_image(self):
         """Parses itunes item images and set url as value"""
-        self.itune_image = self.soup.find('itunes:image').get('href')
+        try:
+            self.itune_image = self.soup.find('itunes:image').get('href')
+        except AttributeError:
+            self.itune_image = None
 
     def set_itunes_order(self):
         """Parses episode order and set url as value"""
@@ -153,8 +197,14 @@ class Item(object):
 
     def set_itunes_subtitle(self):
         """Parses subtitle from itunes tags and sets value"""
-        self.itunes_subtitle = self.soup.find('itunes:subtitle').string
+        try:
+            self.itunes_subtitle = self.soup.find('itunes:subtitle').string
+        except AttributeError:
+            self.itunes_subtitle = None
 
     def set_itunes_summary(self):
         """Parses summary from itunes tags and sets value"""
-        self.itunes_summary = self.soup.find('itunes:summary').string
+        try:
+            self.itunes_summary = self.soup.find('itunes:summary').string
+        except AttributeError:
+            self.itunes_summary = None

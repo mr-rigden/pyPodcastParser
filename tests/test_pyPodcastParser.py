@@ -234,6 +234,98 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, "webrobot")
 
+class Test_Missing_Info_Feed(unittest.TestCase):
+
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'missing_info_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = Podcast.Podcast(self.basic_podcast)
+
+    def test_loding_of_basic_podcast(self):
+        self.assertIsNotNone(self.basic_podcast)
+
+    def test_count_items(self):
+        self.assertNotEqual(self.podcast.count_items(), "basic c")
+
+    def test_copyright(self):
+        self.assertEqual(self.podcast.copyright, None)
+
+    def test_description(self):
+        self.assertEqual(self.podcast.description, None)
+
+    def test_generator(self):
+        self.assertEqual(self.podcast.generator, None)
+
+    def test_itunes_author_name(self):
+        self.assertEqual(self.podcast.itunes_author_name, None)
+
+    def test_itunes_block(self):
+        self.assertEqual(self.podcast.itunes_block, False)
+
+    def test_itunes_categories(self):
+        self.assertFalse("News" in self.podcast.itunes_categories)
+        self.assertFalse("Health" in self.podcast.itunes_categories)
+
+    def test_itunes_explicit(self):
+        self.assertEqual(self.podcast.itunes_explicit, None)
+
+    def test_itunes_complete(self):
+        self.assertEqual(self.podcast.itunes_complete, None)
+
+    def test_itune_image(self):
+        self.assertEqual(self.podcast.itune_image, None)
+
+    def test_itunes_categories_length(self):
+        number_of_categories = len(self.podcast.itunes_categories)
+        self.assertEqual(number_of_categories, 0)
+
+    def test_itunes_keyword_length(self):
+        number_of_keywords = len(self.podcast.itunes_keywords)
+        self.assertEqual(number_of_keywords, 0)
+
+    def test_itunes_new_feed_url(self):
+        self.assertEqual(self.podcast.itunes_new_feed_url, None)
+
+    def test_language(self):
+        self.assertEqual(self.podcast.language, None)
+
+    def test_last_build_date(self):
+        self.assertEqual(self.podcast.last_build_date, None)
+
+    def test_link(self):
+        self.assertEqual(self.podcast.link, None)
+
+    def test_managing_editor(self):
+        self.assertEqual(self.podcast.managing_editor, None)
+
+    def test_published_date(self):
+        self.assertEqual(self.podcast.published_date, None)
+
+    def test_owner_name(self):
+        self.assertEqual(self.podcast.owner_name, None)
+
+    def test_owner_email(self):
+        self.assertEqual(self.podcast.owner_email, None)
+
+    def test_subtitle(self):
+        self.assertEqual(self.podcast.subtitle, None)
+
+    def test_summary(self):
+        self.assertEqual(self.podcast.summary, None)
+
+    def test_summary(self):
+        self.assertEqual(self.podcast.summary, None)
+
+    def test_title(self):
+        self.assertEqual(self.podcast.title, None)
+
+    def test_web_master(self):
+        self.assertEqual(self.podcast.web_master, None)
+
+
 
 class Test_Itunes_Block_Feed(unittest.TestCase):
 
