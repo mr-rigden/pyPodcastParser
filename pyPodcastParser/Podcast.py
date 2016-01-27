@@ -128,7 +128,7 @@ class Podcast():
     def set_creative_commons(self):
         """Parses creative commons and set value"""
         try:
-            self.creative_commons = self.soup.find('creativeCommons:license')
+            self.creative_commons = self.soup.find('creativeCommons:license').string
         except AttributeError:
             self.creative_commons = None
 
