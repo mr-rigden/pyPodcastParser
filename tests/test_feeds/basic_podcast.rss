@@ -16,6 +16,7 @@
         <managingEditor>nobody</managingEditor>
         <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
         <title>basic title</title>
+        <ttl>60</ttl>
         <webMaster>webrobot</webMaster>
 
         <itunes:author>basic itunes author</itunes:author>

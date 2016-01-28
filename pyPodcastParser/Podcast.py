@@ -9,8 +9,11 @@ from pyPodcastParser.Item import Item
 class Podcast():
     """Parses an xml rss feed
 
+    Attributes are generally strings or lists of strings, because we want to record the literal value of elements.
     RSS Specs http://cyber.law.harvard.edu/rss/rss.html
+    More RSS Specs http://www.rssboard.org/rss-specification
     iTunes Podcast Specs http://www.apple.com/itunes/podcasts/specs.html
+    The cloud element aka RSS Cloud is not supported as it has been superseded by the more superior PubSubHubbub protocal
 
     Args:
         feed_content (str): An rss string
@@ -45,6 +48,7 @@ class Podcast():
         owner_email (str): Email of feed owner
         subtitle (str): The feed subtitle
         title (str): The feed title
+        ttl (str): The time to live or number of minutes to cache feed
         web_master (str): The feed's webmaster
     """
 
@@ -89,6 +93,7 @@ class Podcast():
         self.set_managing_editor()
         self.set_published_date()
         self.set_pubsubhubbub()
+        self.set_ttl()
         self.set_web_master()
 
     def set_required_elements(self):
@@ -244,7 +249,8 @@ class Podcast():
 
 
     def set_link(self):
-        """Parses link to homepage and set value"""
+        """Pa<ttl>60</ttl>
+rses link to homepage and set value"""
         try:
             self.link = self.soup.find('link').string
         except AttributeError:
@@ -313,6 +319,14 @@ class Podcast():
             self.title = self.soup.title.string
         except AttributeError:
             self.title = None
+
+    def set_ttl(self):
+        """Parses summary and set value"""
+        try:
+            self.ttl = self.soup.find('ttl').string
+        except AttributeError:
+            self.ttl = None
+
 
     def set_web_master(self):
         """Parses the feed's webmaster and sets value"""

@@ -244,6 +244,9 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_title(self):
         self.assertEqual(self.podcast.title, "basic title")
 
+    def test_ttl(self):
+        self.assertEqual(self.podcast.ttl, "60")
+
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, "webrobot")
 
@@ -434,6 +437,10 @@ class Test_Missing_Info_Feed(unittest.TestCase):
 
     def test_title(self):
         self.assertEqual(self.podcast.title, None)
+
+    def test_ttl(self):
+        self.assertEqual(self.podcast.ttl, None)
+
 
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, None)
