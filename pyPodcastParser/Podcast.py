@@ -28,7 +28,7 @@ class Podcast():
         full_soup (bs4.BeautifulSoup): A soup of the xml with items
         category (list): List for strings representing the feed categories
         copyright (str): The feed's copyright
-        creative_commons (str): The feed's creative commons licens
+        creative_commons (str): The feed's creative commons license
         description (str): The feed's description
         generator (str): The feed's generator
         image_title (str): Feed image title
@@ -155,9 +155,9 @@ class Podcast():
             self.copyright = None
 
     def set_creative_commons(self):
-        """Parses creative commons and set value"""
+        """Parses creative commons for item and sets value"""
         try:
-            self.creative_commons = self.soup.find('creativeCommons:license').string
+            self.creative_commons = self.soup.find('creativecommons:license').string
         except AttributeError:
             self.creative_commons = None
 
