@@ -315,14 +315,10 @@ rses link to homepage and set value"""
         self.pubsubhubbub = None
         atom_links = self.soup.findAll('atom:link')
         for atom_link in atom_links:
-            try:
-                rel = atom_link.get('rel')
-            except AttributeError:
-                continue
-            try:
+            rel = atom_link.get('rel')
+            if rel == "hub":
                 self.pubsubhubbub = atom_link.get('href')
-            except AttributeError:
-                continue
+
 
 
 
