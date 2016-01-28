@@ -40,6 +40,30 @@ class Item(object):
         self.set_rss_element()
         self.set_itunes_element()
 
+    def to_dict(self):
+        item = {}
+        item['author'] = self.author
+        item['comments'] = self.comments
+        item['creative_commons'] = self.creative_commons
+        item['enclosure_url'] = self.enclosure_url
+        item['enclosure_type'] = self.enclosure_type
+        item['enclosure_length'] = self.enclosure_length
+        item['enclosure_type'] = self.enclosure_type
+        item['guid'] = self.guid
+        item['itunes_author_name'] = self.itunes_author_name
+        item['itunes_block'] = self.itunes_block
+        item['itunes_closed_captioned'] = self.itunes_closed_captioned
+        item['itunes_duration'] = self.itunes_duration
+        item['itunes_explicit'] = self.itunes_explicit
+        item['itune_image'] = self.itune_image
+        item['itunes_order'] = self.itunes_order
+        item['itunes_subtitle'] = self.itunes_subtitle
+        item['itunes_summary'] = self.itunes_summary
+        item['link'] = self.link
+        item['published_date'] = self.published_date
+        item['title'] = self.title
+        return item
+
     def set_rss_element(self):
         """Set each of the basic rss elements."""
         self.set_author()

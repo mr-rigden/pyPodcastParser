@@ -10,10 +10,16 @@ class Podcast():
     """Parses an xml rss feed
 
     Attributes are generally strings or lists of strings, because we want to record the literal value of elements.
+
+
     RSS Specs http://cyber.law.harvard.edu/rss/rss.html
+
     More RSS Specs http://www.rssboard.org/rss-specification
+
     iTunes Podcast Specs http://www.apple.com/itunes/podcasts/specs.html
-    The cloud element aka RSS Cloud is not supported as it has been superseded by the more superior PubSubHubbub protocal
+
+
+    The cloud element aka RSS Cloud is not supported as it has been superseded by the superior PubSubHubbub protocal
 
     Args:
         feed_content (str): An rss string
@@ -26,9 +32,10 @@ class Podcast():
         soup (bs4.BeautifulSoup): A soup of the xml with items and image removed
         image_soup (bs4.BeautifulSoup): soup of image
         full_soup (bs4.BeautifulSoup): A soup of the xml with items
-        category (list): List for strings representing the feed categories
+        categories (list): List for strings representing the feed categories
         copyright (str): The feed's copyright
         creative_commons (str): The feed's creative commons license
+        items (item): Item objects
         description (str): The feed's description
         generator (str): The feed's generator
         image_title (str): Feed image title
@@ -68,6 +75,47 @@ class Podcast():
         self.set_itunes()
         self.set_optional_elements()
         self.set_required_elements()
+
+    def to_dict(self):
+        podcast_dict = {}
+        podcast_dict['categories'] = self.categories
+        podcast_dict['copyright'] = self.copyright
+        podcast_dict['creative_commons'] = self.creative_commons
+        podcast_dict['description'] = self.description
+        podcast_dict['generator'] = self.generator
+        podcast_dict['image_title'] = self.image_title
+        podcast_dict['image_url'] = self.image_url
+        podcast_dict['image_link'] = self.image_link
+        podcast_dict['image_width'] = self.image_width
+        podcast_dict['image_height'] = self.image_height
+        podcast_dict['items'] = []
+        for item in self.items:
+            item_dict = item.to_dict()
+            podcast_dict['items'].append(item_dict)
+        podcast_dict['itunes_author_name'] = self.itunes_author_name
+        podcast_dict['itunes_block'] = self.itunes_block
+        podcast_dict['itunes_categories'] = self.itunes_categories
+        podcast_dict['itunes_block'] = self.itunes_block
+        podcast_dict['itunes_complete'] = self.image_width
+        podcast_dict['itunes_explicit'] = self.itunes_explicit
+        podcast_dict['itune_image'] = self.itune_image
+        podcast_dict['itunes_keywords'] = self.image_width
+        podcast_dict['itunes_explicit'] = self.itunes_explicit
+        podcast_dict['itunes_new_feed_url'] = self.itunes_new_feed_url
+        podcast_dict['language'] = self.language
+        podcast_dict['last_build_date'] = self.last_build_date
+        podcast_dict['link'] = self.link
+        podcast_dict['managing_editor'] = self.managing_editor
+        podcast_dict['published_date'] = self.published_date
+        podcast_dict['pubsubhubbub'] = self.pubsubhubbub
+        podcast_dict['owner_name'] = self.owner_name
+        podcast_dict['owner_email'] = self.owner_email
+        podcast_dict['subtitle'] = self.subtitle
+        podcast_dict['title'] = self.title
+        podcast_dict['ttl'] = self.ttl
+        podcast_dict['web_master'] = self.web_master
+        return podcast_dict
+
 
     def set_extended_elements(self):
 
