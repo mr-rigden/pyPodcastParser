@@ -23,13 +23,19 @@ class Podcast():
 
     Attributes:
         feed_content (str): The actual xml of the feed
-        soup (bs4.BeautifulSoup): A soup of the xml with items removed
+        soup (bs4.BeautifulSoup): A soup of the xml with items and image removed
+        image_soup (bs4.BeautifulSoup): soup of image
         full_soup (bs4.BeautifulSoup): A soup of the xml with items
         category (list): List for strings representing the feed categories
         copyright (str): The feed's copyright
         creative_commons (str): The feed's creative commons licens
         description (str): The feed's description
         generator (str): The feed's generator
+        image_title (str): Feed image title
+        image_url (str): Feed image url
+        image_link (str): Feed image link to homepage
+        image_width (str): Feed image width
+        image_height (str): Feed image height
         itunes_author_name (str): The podcast's author name for iTunes
         itunes_block (bool): Does the podcast block itunes
         itunes_categories (list): List of strings of itunes categories
@@ -88,6 +94,7 @@ class Podcast():
         self.set_categories()
         self.set_copyright()
         self.set_generator()
+        self.set_image()
         self.set_language()
         self.set_last_build_date()
         self.set_managing_editor()
@@ -107,10 +114,14 @@ class Podcast():
         self.soup = BeautifulSoup(self.feed_content, "html.parser")
         for item in self.soup.findAll('item'):
             item.decompose()
+        for image in self.soup.findAll('image'):
+            image.decompose()
 
     def set_full_soup(self):
         """Sets soup and keeps items"""
         self.full_soup = BeautifulSoup(self.feed_content, "html.parser")
+
+
 
     def set_items(self):
         self.items = []
@@ -163,6 +174,35 @@ class Podcast():
             self.generator = self.soup.find('generator').string
         except AttributeError:
             self.generator = None
+
+    def set_image(self):
+        """Parses image element and set values"""
+        temp_soup = self.full_soup
+        for item in temp_soup.findAll('item'):
+            item.decompose()
+        image = temp_soup.find('image')
+        try:
+            self.image_title = image.find('title').string
+        except AttributeError:
+            self.image_title = None
+        try:
+            self.image_url = image.find('url').string
+        except AttributeError:
+            self.image_url = None
+        try:
+            self.image_link = image.find('link').string
+        except AttributeError:
+            self.image_link = None
+        try:
+            self.image_width = image.find('width').string
+        except AttributeError:
+            self.image_width = None
+        try:
+            self.image_height = image.find('height').string
+        except AttributeError:
+            self.image_height = None
+
+
 
     def set_itunes_author_name(self):
         """Parses author name from itunes tags and sets value"""

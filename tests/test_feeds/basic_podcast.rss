@@ -6,6 +6,13 @@
         <copyright>basic copyright</copyright>
         <description>basic description</description>
         <generator>an infinite monkeys</generator>
+        <image>
+            <title>Test Image</title>
+            <url>https://test/giffy.jpg</url>
+            <link>https://test</link>
+            <width>1000</width>
+            <height>5000</height>
+        </image>
         <language>basic  language</language>
         <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
         <link>https://github.com/jrigden/pyPodcastParser</link>]

@@ -173,6 +173,13 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_generator(self):
         self.assertEqual(self.podcast.generator, "an infinite monkeys")
 
+    def test_image(self):
+        self.assertEqual(self.podcast.image_title, "Test Image")
+        self.assertEqual(self.podcast.image_url, "https://test/giffy.jpg")
+        self.assertEqual(self.podcast.image_link, "https://test")
+        self.assertEqual(self.podcast.image_width, "1000")
+        self.assertEqual(self.podcast.image_height, "5000")
+
     def test_itunes_author_name(self):
         self.assertEqual(self.podcast.itunes_author_name,
                          "basic itunes author")
@@ -369,6 +376,14 @@ class Test_Missing_Info_Feed(unittest.TestCase):
 
     def test_generator(self):
         self.assertEqual(self.podcast.generator, None)
+
+    def test_image(self):
+        self.assertEqual(self.podcast.image_title, None)
+        self.assertEqual(self.podcast.image_url, None)
+        self.assertEqual(self.podcast.image_link, None)
+        self.assertEqual(self.podcast.image_width, None)
+        self.assertEqual(self.podcast.image_height, None)
+
 
     def test_itunes_author_name(self):
         self.assertEqual(self.podcast.itunes_author_name, None)
