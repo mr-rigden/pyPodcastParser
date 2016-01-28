@@ -13,6 +13,7 @@ class Item(object):
     Attributes:
         author (str): The author of the item
         comments (str): URL of comments
+        creative_commons (str): creative commons license for this item
         description (str): Description of the item.
         enclosure_url (str): URL of enclosure
         enclosure_type (str): File MIME type
@@ -44,6 +45,7 @@ class Item(object):
         self.set_author()
         self.set_categories()
         self.set_comments()
+        self.set_creative_commons()
         self.set_description()
         self.set_enclosure()
         self.set_guid()
@@ -72,6 +74,13 @@ class Item(object):
             self.comments = self.soup.find('comments').string
         except AttributeError:
             self.comments = None
+
+    def set_creative_commons(self):
+        """Parses creative commons for item and sets value"""
+        try:
+            self.creative_commons = self.soup.find('creativecommons:license').string
+        except AttributeError:
+            self.creative_commons = None
 
     def set_description(self):
         """Parses description and set value."""

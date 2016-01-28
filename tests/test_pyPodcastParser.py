@@ -56,6 +56,12 @@ class Test_Basic_Feed_Items(unittest.TestCase):
         self.assertEqual(self.podcast.items[0].comments, "http://comments.com/entry/0")
         self.assertEqual(self.podcast.items[1].comments, "http://comments.com/entry/1")
 
+    def test_item_creative_commons(self):
+        self.assertEqual(self.podcast.items[0].creative_commons, "http://www.creativecommons.org/licenses/by-nc/1.0")
+        self.assertEqual(self.podcast.items[1].creative_commons, None)
+
+
+
     def test_item_categories(self):
         self.assertTrue("Grateful Dead" in self.podcast.items[0].categories)
         self.assertTrue("Dead and Grateful" in self.podcast.items[1].categories)
@@ -150,6 +156,10 @@ class Test_Basic_Feed(unittest.TestCase):
 
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
+
+
+    def test_categories(self):
+        self.assertTrue("Example category 2" in self.podcast.categories)
 
     def test_count_items(self):
         self.assertNotEqual(self.podcast.count_items(), "basic c")
@@ -249,6 +259,7 @@ class Test_Unicode_Feed(unittest.TestCase):
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
 
+
     def test_copyright(self):
         self.assertEqual(self.podcast.copyright, self.unicodeish_text)
 
@@ -334,6 +345,10 @@ class Test_Missing_Info_Feed(unittest.TestCase):
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
 
+
+    def test_categories(self):
+        self.assertFalse("Example category 2" in self.podcast.categories)
+
     def test_count_items(self):
         self.assertNotEqual(self.podcast.count_items(), "basic c")
 
@@ -351,6 +366,8 @@ class Test_Missing_Info_Feed(unittest.TestCase):
 
     def test_itunes_author_name(self):
         self.assertEqual(self.podcast.itunes_author_name, None)
+
+
 
     def test_itunes_block(self):
         self.assertEqual(self.podcast.itunes_block, False)

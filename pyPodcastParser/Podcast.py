@@ -22,6 +22,7 @@ class Podcast():
         feed_content (str): The actual xml of the feed
         soup (bs4.BeautifulSoup): A soup of the xml with items removed
         full_soup (bs4.BeautifulSoup): A soup of the xml with items
+        category (list): List for strings representing the feed categories
         copyright (str): The feed's copyright
         creative_commons (str): The feed's creative commons licens
         description (str): The feed's description
@@ -79,6 +80,7 @@ class Podcast():
 
     def set_optional_elements(self):
         """Sets elements considered option by RSS spec"""
+        self.set_categories()
         self.set_copyright()
         self.set_generator()
         self.set_language()
@@ -111,6 +113,15 @@ class Podcast():
             print(item)
             if item:
                 self.items.append(item)
+
+    def set_categories(self):
+        """Parses and set feed categories"""
+        self.categories = []
+        temp_categories = self.soup.findAll('category')
+        for category in temp_categories:
+            category_text = category.string
+            self.categories.append(category_text)
+
 
     def count_items(self):
         """Counts Items in full_soup and soup. For debugging"""

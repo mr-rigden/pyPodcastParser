@@ -35,6 +35,7 @@
             <category>Grateful Dead</category>
             <category>Stones</category>
             <comments>http://comments.com/entry/0</comments>
+            <creativeCommons:license>http://www.creativecommons.org/licenses/by-nc/1.0</creativeCommons:license>
             <description>basic item description</description>
             <guid isPermaLink="true">basic item guid</guid>
             <link>http://google.com/0</link>
