@@ -254,10 +254,7 @@ class Podcast():
 
     def set_owner(self):
         """Parses owner name and email then sets value"""
-        try:
-            owner = self.soup.find('itunes:owner')
-        except AttributeError:
-            owner = None
+        owner = self.soup.find('itunes:owner')
         try:
             self.owner_name = owner.find('itunes:name').string
         except AttributeError:
