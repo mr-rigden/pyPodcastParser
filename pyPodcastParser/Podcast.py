@@ -40,6 +40,7 @@ class Podcast():
         link (str): URL to homepage
         managing_editor (str): managing editor of feed
         published_date (str): Date feed was published
+        pubsubhubbub (str): The URL of the pubsubhubbub service for this feed
         owner_name (str): Name of feed owner
         owner_email (str): Email of feed owner
         subtitle (str): The feed subtitle
@@ -87,6 +88,7 @@ class Podcast():
         self.set_last_build_date()
         self.set_managing_editor()
         self.set_published_date()
+        self.set_pubsubhubbub()
         self.set_web_master()
 
     def set_required_elements(self):
@@ -261,6 +263,22 @@ class Podcast():
             self.published_date = self.soup.find('pubdate').string
         except AttributeError:
             self.published_date = None
+
+    def set_pubsubhubbub(self):
+        """Parses pubsubhubbub and email then sets value"""
+        self.pubsubhubbub = None
+        atom_links = self.soup.findAll('atom:link')
+        for atom_link in atom_links:
+            try:
+                rel = atom_link.get('rel')
+            except AttributeError:
+                continue
+            try:
+                self.pubsubhubbub = atom_link.get('href')
+            except AttributeError:
+                continue
+
+
 
 
     def set_owner(self):

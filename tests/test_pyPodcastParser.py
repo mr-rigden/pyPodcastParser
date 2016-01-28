@@ -223,6 +223,9 @@ class Test_Basic_Feed(unittest.TestCase):
         self.assertEqual(self.podcast.published_date,
                          "Mon, 24 Mar 2008 23:30:07 EDT")
 
+    def test_pubsubhubbub(self):
+        self.assertEqual(self.podcast.pubsubhubbub, "https://pubsubhubbub.appspot.com")
+
     def test_owner_name(self):
         self.assertEqual(self.podcast.owner_name, "basic itunes owner name")
 
@@ -416,6 +419,9 @@ class Test_Missing_Info_Feed(unittest.TestCase):
 
     def test_owner_email(self):
         self.assertEqual(self.podcast.owner_email, None)
+
+    def test_pubsubhubbub(self):
+        self.assertEqual(self.podcast.pubsubhubbub, None)
 
     def test_subtitle(self):
         self.assertEqual(self.podcast.subtitle, None)

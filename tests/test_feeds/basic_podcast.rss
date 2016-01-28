@@ -8,7 +8,11 @@
         <generator>an infinite monkeys</generator>
         <language>basic  language</language>
         <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
-        <link>https://github.com/jrigden/pyPodcastParser</link>
+        <link>https://github.com/jrigden/pyPodcastParser</link>]
+        <atom:link href="https://bubpubsubhub.appspot.com" />
+        <atom:link rel="buh" href="https://bubpubsubhub.appspot.com" />
+        <atom:link href="https://pubsubhubbub.appspot.com" />
+        <atom:link rel="hub" href="https://pubsubhubbub.appspot.com" />
         <managingEditor>nobody</managingEditor>
         <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
         <title>basic title</title>
