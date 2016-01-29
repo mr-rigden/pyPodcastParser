@@ -9,8 +9,6 @@ Testing - Not Production Ready
 
 **Version:** 0.1.0
 
-**Version:**
-
 *********
 Introduction
 *********
