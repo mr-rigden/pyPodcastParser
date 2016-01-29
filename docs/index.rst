@@ -7,6 +7,12 @@
 pyPodcastParser
 ##################
 
+Some text before.
+
+.. status::
+
+  Some note.
+
 *********
 Introduction
 *********
