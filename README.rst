@@ -39,8 +39,8 @@ Usage
    from pyPodcastParser.Podcast import Podcast
    import requests
 
-   request = requests.get('https://some_rss_feed')
-   podcast = Podcast(request.content)
+   response = requests.get('https://some_rss_feed')
+   podcast = Podcast(response.content)
 
 
 Objects and their Useful Attributes
