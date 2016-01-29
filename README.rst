@@ -128,7 +128,7 @@ Jason Rigden
 
     **Linkedin:** https://www.linkedin.com/in/jasonrigden
 
-    **Twitter:** mr_rigden_
+    **Twitter:** |twitter|
 .. _mr_rigden: https://twitter.com/mr_rigden
 
 
@@ -194,3 +194,8 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :alt: Test Status
     :scale: 100%
     :target: https://travis-ci.org/jrigden/pyPodcastParser
+
+.. |twitter| image:: https://img.shields.io/travis/jrigden/pyPodcastParser.svg?style=flat-square
+    :alt: @mr_rigden
+    :scale: 100%
+    :target: https://twitter.com/mr_rigden
