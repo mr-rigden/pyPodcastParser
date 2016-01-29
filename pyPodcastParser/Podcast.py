@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
-import email.utils
 from bs4 import BeautifulSoup
-import pytz
 import datetime
 
 from pyPodcastParser.Item import Item
@@ -175,7 +173,6 @@ class Podcast():
         full_soup_items = self.full_soup.findAll('item')
         for full_soup_item in full_soup_items:
             item = Item(full_soup_item)
-            print(item)
             if item:
                 self.items.append(item)
 
