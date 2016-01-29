@@ -63,7 +63,7 @@ class Podcast():
     """
 
     def __init__(self, feed_content):
-        super(Podcast, self).__init__()
+        #super(Podcast, self).__init__()
         self.feed_content = feed_content
         self.set_soup()
         self.set_full_soup()

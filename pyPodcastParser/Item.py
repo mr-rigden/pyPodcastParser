@@ -34,7 +34,7 @@ class Item(object):
     """
 
     def __init__(self, soup):
-        super(Item, self).__init__()
+        #super(Item, self).__init__()
 
         self.soup = soup
         self.set_rss_element()

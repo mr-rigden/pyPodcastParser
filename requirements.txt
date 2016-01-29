@@ -2,5 +2,10 @@ beautifulsoup4==4.4.1
 coverage==4.0.3
 coveralls==1.1
 docopt==0.6.2
+pluggy==0.3.1
+py==1.4.31
+pytest==2.8.7
 requests==2.9.1
+tox==2.3.1
+virtualenv==14.0.3
 wheel==0.24.0

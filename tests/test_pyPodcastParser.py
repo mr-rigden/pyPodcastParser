@@ -264,7 +264,7 @@ class Test_Basic_Feed(unittest.TestCase):
 class Test_Unicode_Feed(unittest.TestCase):
 
     def setUp(self):
-        self.unicodeish_text = "ℐℑℒℓ℔✕✖✗✘⨒⨓ㄏㄐ㐆㐇㐈㐉蘿螺ﻛﻜﻝﻞ𝀏𝀐𝀑𝀒𝀓ǫǬǭǮǯǰΑΒΓΔΕΖΗΘɥɦɧखगڙښڛ"
+        self.unicodeish_text = u"ℐℑℒℓ℔✕✖✗✘⨒⨓ㄏㄐ㐆㐇㐈㐉蘿螺ﻛﻜﻝﻞ𝀏𝀐𝀑𝀒𝀓ǫǬǭǮǯǰΑΒΓΔΕΖΗΘɥɦɧखगڙښڛ"
         test_dir = os.path.dirname(__file__)
         test_feeds_dir = os.path.join(test_dir, 'test_feeds')
         basic_podcast_path = os.path.join(test_feeds_dir, 'unicode_podcast.rss')
