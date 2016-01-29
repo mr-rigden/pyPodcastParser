@@ -6,7 +6,7 @@ pyPodcastParser
 Introduction
 *********
 
-|pypi| |pip_monthly| |testing| |coverall| |license|
+|pypi| |pip_monthly| |testing| |coverall| |codacy| |license|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most user will be comfortable with the Requests_ library.
 
@@ -169,6 +169,11 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :alt: Test Status
     :scale: 100%
     :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
+
+.. |codacy| image:: https://img.shields.io/codacy/6f81796c588f455f85c631d8e47b46fc.svg?style=flat-square
+    :alt: Codacy Grade
+    :scale: 100%
+    :target: https://www.codacy.com/app/jasonrigden/pyPodcastParser/dashboard
 
 .. |docs| image:: https://readthedocs.org/projects/docs/badge/?version=latest
     :alt: Documentation Status
