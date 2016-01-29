@@ -4,6 +4,7 @@ import datetime
 
 from pyPodcastParser.Item import Item
 
+
 class Podcast():
     """Parses an xml rss feed
 
@@ -113,9 +114,7 @@ class Podcast():
         podcast_dict['web_master'] = self.web_master
         return podcast_dict
 
-
     def set_extended_elements(self):
-
         """Parses and sets non required elements"""
         self.set_creative_commons()
         self.set_owner()
@@ -166,8 +165,6 @@ class Podcast():
         """Sets soup and keeps items"""
         self.full_soup = BeautifulSoup(self.feed_content, "html.parser")
 
-
-
     def set_items(self):
         self.items = []
         full_soup_items = self.full_soup.findAll('item')
@@ -183,7 +180,6 @@ class Podcast():
         for category in temp_categories:
             category_text = category.string
             self.categories.append(category_text)
-
 
     def count_items(self):
         """Counts Items in full_soup and soup. For debugging"""
@@ -201,7 +197,8 @@ class Podcast():
     def set_creative_commons(self):
         """Parses creative commons for item and sets value"""
         try:
-            self.creative_commons = self.soup.find('creativecommons:license').string
+            self.creative_commons = self.soup.find(
+                'creativecommons:license').string
         except AttributeError:
             self.creative_commons = None
 
@@ -245,8 +242,6 @@ class Podcast():
             self.image_height = image.find('height').string
         except AttributeError:
             self.image_height = None
-
-
 
     def set_itunes_author_name(self):
         """Parses author name from itunes tags and sets value"""
@@ -304,16 +299,17 @@ class Podcast():
         except AttributeError:
             keywords = None
         try:
-            self.itunes_keywords = [keyword.strip() for keyword in keywords.split(',')]
+            self.itunes_keywords = [keyword.strip()
+                                    for keyword in keywords.split(',')]
             self.itunes_keywords = list(set(self.itunes_keywords))
         except AttributeError:
             self.itunes_keywords = []
 
-
     def set_itunes_new_feed_url(self):
         """Parses new feed url from itunes tags and sets value"""
         try:
-            self.itunes_new_feed_url = self.soup.find('itunes:new-feed-url').string
+            self.itunes_new_feed_url = self.soup.find(
+                'itunes:new-feed-url').string
         except AttributeError:
             self.itunes_new_feed_url = None
 
@@ -330,7 +326,6 @@ class Podcast():
             self.last_build_date = self.soup.find('lastbuilddate').string
         except AttributeError:
             self.last_build_date = None
-
 
     def set_link(self):
         """Pa<ttl>60</ttl>
@@ -362,10 +357,6 @@ rses link to homepage and set value"""
             rel = atom_link.get('rel')
             if rel == "hub":
                 self.pubsubhubbub = atom_link.get('href')
-
-
-
-
 
     def set_owner(self):
         """Parses owner name and email then sets value"""
@@ -406,7 +397,6 @@ rses link to homepage and set value"""
             self.ttl = self.soup.find('ttl').string
         except AttributeError:
             self.ttl = None
-
 
     def set_web_master(self):
         """Parses the feed's webmaster and sets value"""

@@ -23,7 +23,7 @@ class Item(object):
         itunes_block (bool): It this Item blocked from itunes
         itunes_closed_captioned: (str): It is this item have closed captions
         itunes_duration (str): Duration of enclosure
-        itunes_explicit (str): Is this item explicit. Should only be "yes" and "clean."
+        itunes_explicit (str): Is this item explicit. Should only be yes or clean.
         itune_image (str): URL of item cover art
         itunes_order (str): Override published_date order
         itunes_subtitle (str): The item subtitle
@@ -102,7 +102,8 @@ class Item(object):
     def set_creative_commons(self):
         """Parses creative commons for item and sets value"""
         try:
-            self.creative_commons = self.soup.find('creativecommons:license').string
+            self.creative_commons = self.soup.find(
+                'creativecommons:license').string
         except AttributeError:
             self.creative_commons = None
 
@@ -143,7 +144,6 @@ class Item(object):
         except AttributeError:
             self.link = None
 
-
     def set_published_date(self):
         """Parses published date and set value."""
         try:
@@ -151,14 +151,12 @@ class Item(object):
         except AttributeError:
             self.published_date = None
 
-
     def set_title(self):
         """Parses title and set value."""
         try:
             self.title = self.soup.find('title').string
         except AttributeError:
             self.title = None
-
 
     def set_itunes_element(self):
         """Set each of the itunes elements."""
@@ -193,7 +191,8 @@ class Item(object):
     def set_itunes_closed_captioned(self):
         """Parses isClosedCaptioned from itunes tags and sets value"""
         try:
-            self.itunes_closed_captioned = self.soup.find('itunes:isclosedcaptioned').string
+            self.itunes_closed_captioned = self.soup.find(
+                'itunes:isclosedcaptioned').string
             self.itunes_closed_captioned = self.itunes_closed_captioned.lower()
         except AttributeError:
             self.itunes_closed_captioned = None
