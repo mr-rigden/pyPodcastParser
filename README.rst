@@ -195,7 +195,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://travis-ci.org/jrigden/pyPodcastParser
 
-.. |twitter| image:: https://img.shields.io/travis/jrigden/pyPodcastParser.svg?style=flat-square
+.. |twitter| image:: https://img.shields.io/twitter/follow/mr_rigden.svg?style=social
     :alt: @mr_rigden
     :scale: 100%
     :target: https://twitter.com/mr_rigden
