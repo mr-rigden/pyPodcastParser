@@ -170,12 +170,12 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://pypodcastparser.readthedocs.org/en/latest/?badge=latest
 
-.. |testing| image:: https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master
+.. |testing| image:: https://img.shields.io/travis/jrigden/pyPodcastParser.svg?style=flat-square
     :alt: Test Status
     :scale: 100%
     :target: https://travis-ci.org/jrigden/pyPodcastParser
 
-.. |coverall| image:: https://coveralls.io/repos/github/jrigden/pyPodcastParser/badge.svg?branch=master
+.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg?style=flat-square
     :alt: Test Status
     :scale: 100%
     :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
