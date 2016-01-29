@@ -157,7 +157,7 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_loding_of_basic_podcast(self):
         self.assertIsNotNone(self.basic_podcast)
 
-    def test_categories(self):
+    def test_dict(self):
         feed_dict = self.podcast.to_dict()
         self.assertTrue(type(feed_dict) is dict)
 
