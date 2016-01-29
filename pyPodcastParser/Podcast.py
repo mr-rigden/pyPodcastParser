@@ -9,9 +9,6 @@ from pyPodcastParser.Item import Item
 class Podcast():
     """Parses an xml rss feed
 
-    Attributes are generally strings or lists of strings, because we want to record the literal value of elements.
-
-
     RSS Specs http://cyber.law.harvard.edu/rss/rss.html
 
     More RSS Specs http://www.rssboard.org/rss-specification
@@ -26,6 +23,8 @@ class Podcast():
 
     Note:
         All attributes with empty or nonexistent element will have a value of None
+
+        Attributes are generally strings or lists of strings, because we want to record the literal value of elements.
 
     Attributes:
         feed_content (str): The actual xml of the feed
