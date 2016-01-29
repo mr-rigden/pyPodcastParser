@@ -6,11 +6,7 @@ pyPodcastParser
 Introduction
 *********
 
-|pypi| |pip_monthly|
-
-|testing| |coverall| |docs|
-
-|license|
+|pypi| |pip_monthly| |testing| |coverall| |docs| |license|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most user will be comfortable with the Requests_ library.
 
@@ -169,7 +165,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg
+.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg?style=flat-square
     :alt: Test Status
     :scale: 100%
     :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
@@ -184,7 +180,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://opensource.org/licenses/MIT
 
-.. |pypi| image:: https://img.shields.io/pypi/v/pyloudness.svg
+.. |pypi| image:: https://img.shields.io/pypi/v/pyloudness.svg?style=flat-square
     :alt: pypi
     :scale: 100%
     :target: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
