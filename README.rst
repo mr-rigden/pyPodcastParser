@@ -6,9 +6,12 @@ pyPodcastParser
 Introduction
 *********
 
-|docs| |testing| |coverall|
+|pip_monthly|
+|testing| |coverall| |docs|
+|license|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most user will be comfortable with the Requests_ library.
+
 
 .. _Requests: http://docs.python-requests.org/en/latest/
 
@@ -164,18 +167,27 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
+.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg
+    :alt: Test Status
+    :scale: 100%
+    :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
 
 .. |docs| image:: https://readthedocs.org/projects/docs/badge/?version=latest
     :alt: Documentation Status
     :scale: 100%
     :target: https://pypodcastparser.readthedocs.org/en/latest/?badge=latest
 
+.. |license| image:: https://img.shields.io/pypi/l/pyloudness.svg
+    :alt: License
+    :scale: 100%
+    :target: https://opensource.org/licenses/MIT
+
+.. |pip_monthly| image:: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
+    :alt: Pip Monthly Downloads
+    :scale: 100%
+    :target: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
+
 .. |testing| image:: https://img.shields.io/travis/jrigden/pyPodcastParser.svg?style=flat-square
     :alt: Test Status
     :scale: 100%
     :target: https://travis-ci.org/jrigden/pyPodcastParser
-
-.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg?style=flat-square
-    :alt: Test Status
-    :scale: 100%
-    :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
