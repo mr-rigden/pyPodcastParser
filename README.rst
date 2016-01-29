@@ -5,6 +5,11 @@ pyPodcastParser
 *********
 Introduction
 *********
+.. image:: https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master
+    :target: https://travis-ci.org/jrigden/pyPodcastParser
+.. image:: https://coveralls.io/repos/github/jrigden/pyPodcastParser/badge.svg?branch=master
+    :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=mast
+|docs|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most user will be most comfortable with the Requests_ library.
 
@@ -154,3 +159,9 @@ Permission is hereby granted, free of charge, to any person obtaining a copy of 
 The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+
+.. |docs| image:: https://readthedocs.org/projects/docs/badge/?version=latest
+    :alt: Documentation Status
+    :scale: 100%
+    :target: https://docs.readthedocs.org/en/latest/?badge=latest
