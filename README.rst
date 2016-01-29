@@ -129,6 +129,12 @@ Development
 https://github.com/jrigden/pyPodcastParser
 
 *********
+Docs
+*********
+
+http://pypodcastparser.readthedocs.org/en/latest/
+
+*********
 Testing
 *********
 
