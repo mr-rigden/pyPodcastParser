@@ -6,8 +6,10 @@ pyPodcastParser
 Introduction
 *********
 
-|pip_monthly|
+|pypi| |pip_monthly|
+
 |testing| |coverall| |docs|
+
 |license|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most user will be comfortable with the Requests_ library.
@@ -177,10 +179,15 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://pypodcastparser.readthedocs.org/en/latest/?badge=latest
 
-.. |license| image:: https://img.shields.io/pypi/l/pyloudness.svg
+.. |license| image:: https://img.shields.io/pypi/l/pyloudness.svg?style=flat-square
     :alt: License
     :scale: 100%
     :target: https://opensource.org/licenses/MIT
+
+.. |pypi| image:: https://img.shields.io/pypi/v/pyloudness.svg
+    :alt: pypi
+    :scale: 100%
+    :target: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
 
 .. |pip_monthly| image:: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
     :alt: Pip Monthly Downloads
