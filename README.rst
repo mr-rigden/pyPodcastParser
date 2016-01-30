@@ -157,7 +157,7 @@ The above copyright notice and this permission notice shall be included in all c
 
 THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
 
-.. |coverall| image:: https://img.shields.io/coveralls/jrigden/pyPodcastParser.svg?style=flat-square
+.. |coverall| image:: https://coveralls.io/repos/github/jrigden/pyPodcastParser/badge.svg?branch=master
     :alt: Test Status
     :scale: 100%
     :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
@@ -180,14 +180,14 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
 .. |pypi| image:: https://badge.fury.io/py/pyPodcastParser.svg
     :alt: pypi
     :scale: 100%
-    :target: https://img.shields.io/pypi/dm/pyPodcastParser.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/pyPodcastParser
 
 .. |pip_monthly| image:: https://img.shields.io/pypi/dm/pyPodcastParser.svg?style=flat-square
     :alt: Pip Monthly Downloads
     :scale: 100%
-    :target: https://img.shields.io/pypi/dm/pyloudness.svg?style=flat-square
+    :target: https://pypi.python.org/pypi/pyPodcastParser
 
-.. |testing| image:: https://img.shields.io/travis/jrigden/pyPodcastParser.svg?style=flat-square
+.. |testing| image:: https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master
     :alt: Test Status
     :scale: 100%
     :target: https://travis-ci.org/jrigden/pyPodcastParser
