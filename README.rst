@@ -2,10 +2,6 @@
 pyPodcastParser
 ##################
 
-*********
-Introduction
-*********
-
 |testing| |coverall| |codacy| |license|
 
 pyPodcastParser is a podcast parser. It should parse any RSS file, but it specializes in parsing podcast rss feeds. pyPodcastParser is agnostic about the method you use to get a podcast RSS feed. Most users will be comfortable with the Requests_ library.
