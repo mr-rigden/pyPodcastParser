@@ -177,7 +177,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://opensource.org/licenses/MIT
 
-.. |pypi| image:: https://img.shields.io/pypi/v/pyPodcastParser.svg?style=flat-square
+.. |pypi| image:: https://badge.fury.io/py/pyPodcastParser.svg
     :alt: pypi
     :scale: 100%
     :target: https://img.shields.io/pypi/dm/pyPodcastParser.svg?style=flat-square
