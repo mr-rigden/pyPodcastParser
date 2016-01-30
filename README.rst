@@ -1,6 +1,6 @@
-##################
+###############
 pyPodcastParser
-##################
+###############
 
 |pypi| |pip_monthly| |testing| |coverall| |codacy| |license|
 
@@ -9,9 +9,9 @@ pyPodcastParser is a podcast parser. It should parse any RSS file, but it specia
 
 .. _Requests: http://docs.python-requests.org/en/latest/
 
-*********
+************
 Installation
-*********
+************
 
 
 ::
@@ -19,9 +19,9 @@ Installation
    pip install pyPodcastParser
 
 
-*********
+*****
 Usage
-*********
+*****
 
 ::
 
@@ -32,8 +32,9 @@ Usage
    podcast = Podcast(response.content)
 
 
+===================================
 Objects and their Useful Attributes
-=========
+===================================
 
 **Notes:**
 
@@ -41,8 +42,9 @@ Objects and their Useful Attributes
 * Attributes are generally strings or lists of strings, because we want to record the literal value of elements.
 * The cloud element aka RSS Cloud is not supported as it has been superseded by the superior PubSubHubbub protocal
 
+-------
 Podcast
----------
+-------
 
 * categories (list) A list for strings representing the feed categories
 * copyright (string): The feed's copyright
@@ -76,8 +78,9 @@ Podcast
 * ttl (string): The time to live or number of minutes to cache feed
 * web_master (string): The feed's webmaster
 
+----
 Item
----------
+----
 
 * author (string): The author of the item
 * comments (string): URL of comments
@@ -100,51 +103,51 @@ Item
 * published_date (string): Date item was published
 * title (string): The title of item.
 
-*********
+***********************
 Bugs & Feature Requests
-*********
+***********************
 
 https://github.com/jrigden/pyPodcastParser/issues/new
 
-*********
+*******
 Credits
-*********
+*******
 
+============
 Jason Rigden
-=========
+============
 
     **Email:** jasonrigden@gmail.com
 
     **Linkedin:** https://www.linkedin.com/in/jasonrigden
 
     **Twitter:** |twitter|
-.. _mr_rigden: https://twitter.com/mr_rigden
 
 
-*********
+***********
 Development
-*********
+***********
 
 https://github.com/jrigden/pyPodcastParser
 
-*********
+****
 Docs
-*********
+****
 
 http://pypodcastparser.readthedocs.org/en/latest/
 
-*********
+*******
 Testing
-*********
+*******
 
 .. image:: https://travis-ci.org/jrigden/pyPodcastParser.svg?branch=master
     :target: https://travis-ci.org/jrigden/pyPodcastParser
 .. image:: https://coveralls.io/repos/github/jrigden/pyPodcastParser/badge.svg?branch=master
     :target: https://coveralls.io/github/jrigden/pyPodcastParser?branch=master
 
-*********
+*******
 License
-*********
+*******
 
 **The MIT License** (MIT) Copyright (c) 2016 **Jason Rigden**
 
