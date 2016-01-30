@@ -5,8 +5,6 @@ install:
 - "pip install -r requirements.txt"
 # command to run tests
 script:
-  - py.test -v tests/test_pyPodcastParser.py
-  - coverage run --source pyPodcastParser -m py.test
-  - coverage report
+  - tox
 after_success:
   coveralls
