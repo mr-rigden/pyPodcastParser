@@ -44,4 +44,7 @@ setup(
 
     keywords=['podcast', 'parser', 'rss', 'feed'],
 
+    packages=find_packages(exclude=['contrib', 'docs', 'tests']),
+
+
 )
