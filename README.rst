@@ -172,7 +172,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://pypodcastparser.readthedocs.org/en/latest/?badge=latest
 
-.. |license| image:: https://img.shields.io/pypi/l/pyloudness.svg?style=flat-square
+.. |license| image:: https://img.shields.io/pypi/l/pyloudness.svg
     :alt: License
     :scale: 100%
     :target: https://opensource.org/licenses/MIT
@@ -182,7 +182,7 @@ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLI
     :scale: 100%
     :target: https://pypi.python.org/pypi/pyPodcastParser
 
-.. |pip_monthly| image:: https://img.shields.io/pypi/dm/pyPodcastParser.svg?style=flat-square
+.. |pip_monthly| image:: https://img.shields.io/pypi/dm/pyPodcastParser.svg
     :alt: Pip Monthly Downloads
     :scale: 100%
     :target: https://pypi.python.org/pypi/pyPodcastParser
