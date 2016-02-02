@@ -19,6 +19,36 @@ class Test_Test(unittest.TestCase):
     def test_loading_sample_data(self):
         self.assertEqual(True, True)
 
+class Test_Valid_RSS_Check(unittest.TestCase):
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'itunes_block_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = Podcast.Podcast(self.basic_podcast)
+
+    def test_is_valid_rss(self):
+        self.assertEqual(self.podcast.is_valid_rss, True)
+
+    def test_is_podcast(self):
+        self.assertEqual(self.podcast.is_valid_podcast, True)
+
+class Test_Invalid_RSS_Check(unittest.TestCase):
+    def setUp(self):
+        test_dir = os.path.dirname(__file__)
+        test_feeds_dir = os.path.join(test_dir, 'test_feeds')
+        basic_podcast_path = os.path.join(test_feeds_dir, 'missing_info_podcast.rss')
+        basic_podcast_file = open(basic_podcast_path, "r")
+        self.basic_podcast = basic_podcast_file.read()
+        self.podcast = Podcast.Podcast(self.basic_podcast)
+
+    def test_is_valid_rss(self):
+        self.assertEqual(self.podcast.is_valid_rss, False)
+
+    def test_is_podcast(self):
+        self.assertEqual(self.podcast.is_valid_podcast, False)
+
 class Test_Basic_Feed_Item_Blocked(unittest.TestCase):
     def setUp(self):
         test_dir = os.path.dirname(__file__)

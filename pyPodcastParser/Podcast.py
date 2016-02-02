@@ -61,6 +61,8 @@ class Podcast():
         title (str): The feed title
         ttl (str): The time to live or number of minutes to cache feed
         web_master (str): The feed's webmaster
+        is_valid_rss (bool): Is this a valid RSS Feed
+        is_valid_podcast (bool): Is this a valid Podcast
     """
 
     def __init__(self, feed_content):
@@ -73,6 +75,27 @@ class Podcast():
         self.set_itunes()
         self.set_optional_elements()
         self.set_required_elements()
+
+        self.set_validity()
+
+    def set_validity(self):
+        self.set_is_valid_rss()
+        self.set_is_valid_podcast()
+
+    def set_is_valid_rss(self):
+        """Check to if this is actually a valid RSS feed"""
+        if self.title and self.link and self.description:
+            self.is_valid_rss = True
+        else:
+            self.is_valid_rss = False
+
+    def set_is_valid_podcast(self):
+        for item in self.items:
+            if item.enclosure_type:
+                if item.enclosure_type.lower() == "audio/mpeg":
+                    self.is_valid_podcast = True
+                    return
+        self.is_valid_podcast =  False
 
     def to_dict(self):
         podcast_dict = {}
