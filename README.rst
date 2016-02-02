@@ -138,7 +138,13 @@ Jason Rigden
 *******
 History
 *******
+
+**Version 1.1.1**
+
+* Fixed missed named attribute in items
+
 **Version 1.1.0**
+
 * Added Validation for RSS and podcasts
 * Added several useful time attributes
 

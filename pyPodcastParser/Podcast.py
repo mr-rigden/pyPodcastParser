@@ -388,8 +388,7 @@ class Podcast():
             self.last_build_date = None
 
     def set_link(self):
-        """Pa<ttl>60</ttl>
-rses link to homepage and set value"""
+        """Parses link to homepage and set value"""
         try:
             self.link = self.soup.find('link').string
         except AttributeError:

@@ -162,7 +162,7 @@ class Item(object):
         try:
             self.description = self.soup.find('description').string
         except AttributeError:
-            self.comments = None
+            self.description = None
 
     def set_enclosure(self):
         """Parses enclosure_url, enclosure_type then set values."""
