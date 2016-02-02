@@ -14,7 +14,7 @@
             <height>5000</height>
         </image>
         <language>basic  language</language>
-        <lastBuildDate>Mon, 24 Mar 2008 23:30:07 EDT</lastBuildDate>
+        <lastBuildDate>Mon, 24 Mar 2008 23:30:07 GMT</lastBuildDate>
         <link>https://github.com/jrigden/pyPodcastParser</link>]
         <atom:link href="https://bubpubsubhub.appspot.com" />
         <atom:link rel="buh" href="https://bubpubsubhub.appspot.com" />
@@ -23,12 +23,12 @@
         <atom:link rel="hub" href="https://pubsubhubbub.appspot.com" />
 
         <atom:link />
-        
+
         <atom:link href="https://bubpubsubhub.pspot.com" />
         <atom:link rel="buh" href="https://bubpubsuhub.appspot.com" />
         <atom:link href="https://pubsubhbub.appspot.com" />
         <managingEditor>nobody</managingEditor>
-        <pubDate>Mon, 24 Mar 2008 23:30:07 EDT</pubDate>
+        <pubDate>Mon, 24 Mar 2008 23:30:07 GMT</pubDate>
         <title>basic title</title>
         <ttl>60</ttl>
         <webMaster>webrobot</webMaster>

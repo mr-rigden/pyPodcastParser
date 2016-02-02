@@ -250,7 +250,7 @@ class Test_Basic_Feed(unittest.TestCase):
 
     def test_last_build_date(self):
         self.assertEqual(self.podcast.last_build_date,
-                         "Mon, 24 Mar 2008 23:30:07 EDT")
+                         "Mon, 24 Mar 2008 23:30:07 GMT")
 
     def test_link(self):
         self.assertEqual(self.podcast.link,
@@ -261,7 +261,7 @@ class Test_Basic_Feed(unittest.TestCase):
 
     def test_published_date(self):
         self.assertEqual(self.podcast.published_date,
-                         "Mon, 24 Mar 2008 23:30:07 EDT")
+                         "Mon, 24 Mar 2008 23:30:07 GMT")
 
     def test_pubsubhubbub(self):
         self.assertEqual(self.podcast.pubsubhubbub, "https://pubsubhubbub.appspot.com")
@@ -290,6 +290,13 @@ class Test_Basic_Feed(unittest.TestCase):
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, "webrobot")
 
+    def test_time_published(self):
+        self.assertEqual(self.podcast.time_published, 1206401407)
+        self.assertEqual(self.podcast.day_published, 24)
+        self.assertEqual(self.podcast.month_published, 3)
+        self.assertEqual(self.podcast.year_published, 2008)
+        self.assertEqual(self.podcast.week_published, 13)
+        self.assertEqual(self.podcast.day_of_year_published, 84)
 
 class Test_Unicode_Feed(unittest.TestCase):
 
@@ -352,8 +359,6 @@ class Test_Unicode_Feed(unittest.TestCase):
     def test_managing_editor(self):
         self.assertEqual(self.podcast.managing_editor, self.unicodeish_text)
 
-    def test_published_date(self):
-        self.assertEqual(self.podcast.published_date, self.unicodeish_text)
 
     def test_owner_name(self):
         self.assertEqual(self.podcast.owner_name, self.unicodeish_text)
@@ -493,7 +498,13 @@ class Test_Missing_Info_Feed(unittest.TestCase):
     def test_web_master(self):
         self.assertEqual(self.podcast.web_master, None)
 
-
+    def test_time_published(self):
+        self.assertEqual(self.podcast.time_published, None)
+        self.assertEqual(self.podcast.day_published, None)
+        self.assertEqual(self.podcast.month_published, None)
+        self.assertEqual(self.podcast.year_published, None)
+        self.assertEqual(self.podcast.week_published, None)
+        self.assertEqual(self.podcast.day_of_year_published, None)
 
 class Test_Itunes_Block_Feed(unittest.TestCase):
 

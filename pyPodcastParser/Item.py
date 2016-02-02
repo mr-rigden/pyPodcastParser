@@ -1,3 +1,7 @@
+from datetime import datetime
+import email.utils
+from time import mktime
+
 class Item(object):
     """Parses an xml rss feed
 
@@ -31,6 +35,12 @@ class Item(object):
         link (str): The URL of item.
         published_date (str): Date item was published
         title (str): The title of item.
+        time_published (int): The epoch time when created
+        day_published (int): Day of month when created
+        month_published (int): Month of year when created
+        year_published (int): Year when created
+        week_published (int): Week number when created
+        day_of_year_published (int): Day of the year when created
     """
 
     def __init__(self, soup):
@@ -39,6 +49,46 @@ class Item(object):
         self.soup = soup
         self.set_rss_element()
         self.set_itunes_element()
+
+        self.set_time_published()
+        self.set_dates_published()
+
+    def set_time_published(self):
+        if self.published_date is None:
+            self.time_published = None
+            self.day_published = None
+            self.month_published = None
+            self.year_published = None
+            return
+        time_tuple = email.utils.parsedate_tz(self.published_date)
+        try:
+            self.time_published = email.utils.mktime_tz(time_tuple)
+        except TypeError:
+            self.time_published = None
+
+    def set_dates_published(self):
+        if self.published_date is None:
+            self.day_published = None
+            self.month_published = None
+            self.year_published = None
+            self.week_published = None
+            self.day_of_year_published = None
+            return
+        time_tuple = email.utils.parsedate(self.published_date)
+        try:
+            temp_datetime = datetime(time_tuple[0], time_tuple[1], time_tuple[2])
+        except TypeError:
+            self.day_published = None
+            self.month_published = None
+            self.year_published = None
+            self.week_published = None
+            self.day_of_year_published = None
+            return
+        self.day_published = temp_datetime.day
+        self.month_published = temp_datetime.month
+        self.year_published = temp_datetime.year
+        self.week_published = temp_datetime.isocalendar()[1]
+        self.day_of_year_published = temp_datetime.timetuple().tm_yday
 
     def to_dict(self):
         item = {}
