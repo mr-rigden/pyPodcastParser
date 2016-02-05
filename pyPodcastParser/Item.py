@@ -50,10 +50,6 @@ class Item(object):
 
     def set_time_published(self):
         if self.published_date is None:
-            self.time_published = None
-            self.day_published = None
-            self.month_published = None
-            self.year_published = None
             return
         time_tuple = email.utils.parsedate_tz(self.published_date)
         try:
