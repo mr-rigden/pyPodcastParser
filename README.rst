@@ -77,12 +77,7 @@ Podcast
 * title (string): The feed title
 * ttl (string): The time to live or number of minutes to cache feed
 * web_master (string): The feed's webmaster
-* time_published (int): The epoch time when created
-* day_published (int): Day of month when created
-* month_published (int): Month of year when created
-* year_published (int): Year when created
-* week_published (int): Week number when created
-* day_of_year_published (int): Day of the year when created
+* date_time (datetime): When published
 
 ----
 Item
@@ -108,12 +103,7 @@ Item
 * link (string): The URL of item.
 * published_date (string): Date item was published
 * title (string): The title of item.
-* time_published (int): The epoch time when created
-* day_published (int): Day of month when created
-* month_published (int): Month of year when created
-* year_published (int): Year when created
-* week_published (int): Week number when created
-* day_of_year_published (int): Day of the year when created
+* date_time (datetime): When published
 
 ***********************
 Bugs & Feature Requests
