@@ -139,6 +139,10 @@ Jason Rigden
 History
 *******
 
+**Version 2.0.0**
+
+* Removed most time attributes and replaced then them with more concise and versatile datetime object
+
 **Version 1.1.1**
 
 * Fixed missed named attribute in items

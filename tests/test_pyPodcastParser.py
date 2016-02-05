@@ -1,4 +1,5 @@
 # -*- coding: utf-8 -*-
+import datetime
 import os
 import unittest
 
@@ -166,8 +167,8 @@ class Test_Basic_Feed_Items(unittest.TestCase):
         self.assertEqual(self.podcast.items[1].link, "http://google.com/1")
 
     def test_item_published_date(self):
-        self.assertEqual(self.podcast.items[0].published_date, "Fri, 21 Mar 2008 09:51:00 EDT")
-        self.assertEqual(self.podcast.items[1].published_date, "Fri, 21 Mar 2008 09:50:00 EDT")
+        self.assertTrue(isinstance(self.podcast.items[1].date_time, datetime.datetime))
+
 
     def test_item_title(self):
         self.assertEqual(self.podcast.items[0].title, "basic item title")
@@ -291,12 +292,7 @@ class Test_Basic_Feed(unittest.TestCase):
         self.assertEqual(self.podcast.web_master, "webrobot")
 
     def test_time_published(self):
-        self.assertEqual(self.podcast.time_published, 1206401407)
-        self.assertEqual(self.podcast.day_published, 24)
-        self.assertEqual(self.podcast.month_published, 3)
-        self.assertEqual(self.podcast.year_published, 2008)
-        self.assertEqual(self.podcast.week_published, 13)
-        self.assertEqual(self.podcast.day_of_year_published, 84)
+        self.assertTrue(isinstance(self.podcast.date_time, datetime.datetime))
 
 class Test_Unicode_Feed(unittest.TestCase):
 
@@ -499,12 +495,7 @@ class Test_Missing_Info_Feed(unittest.TestCase):
         self.assertEqual(self.podcast.web_master, None)
 
     def test_time_published(self):
-        self.assertEqual(self.podcast.time_published, None)
-        self.assertEqual(self.podcast.day_published, None)
-        self.assertEqual(self.podcast.month_published, None)
-        self.assertEqual(self.podcast.year_published, None)
-        self.assertEqual(self.podcast.week_published, None)
-        self.assertEqual(self.podcast.day_of_year_published, None)
+        self.assertIsNone(self.podcast.date_time)
 
 class Test_Itunes_Block_Feed(unittest.TestCase):
 
